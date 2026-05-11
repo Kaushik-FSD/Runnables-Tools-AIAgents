@@ -17,8 +17,9 @@ model = ChatMistralAI(model="mistral-small-2506")
 # 3. Output Parser
 parser = StrOutputParser()
 
-
+# These are looking like chain but it is sequence runnable.
 chain = prompt | model | parser
 
+# rather than calling everything one by one, you just call invoke moethod to exevute the chain
 result = chain.invoke("Machine Learning")
 print(result)
