@@ -35,10 +35,12 @@ seq = code_prompt | model | parser
 # RunnablePassthrough() returns the input only that we pased it
 seq2 = RunnableParallel(
     {
-        "code" :  RunnablePassthrough(), # This will hold the o/p of seq (i.e., the code)
-        "explanation" : explain_prompt | model | parser # and from the RunablePassthrough it is going to pass to explain_prompt (i.e., the code again)
+        # This will hold the o/p of seq (i.e., the code)
+        "code" :  RunnablePassthrough(),
+        # And from the RunablePassthrough it is going to pass to explain_prompt (i.e., the code again)
+        "explanation" : explain_prompt | model | parser
     }
-)
+) 
 
 chain = seq | seq2
 
