@@ -24,6 +24,9 @@ pypdf
 
 requests
 
+# Official Tavily SDK (`from tavily import TavilyClient`)
+tavily-python
+
 fastapi
 uvicorn
 langsmith
